@@ -1,0 +1,53 @@
+/* {
+  border: 1px black dashed;
+  
+} */
+body {
+  background: linear-gradient(to bottom left,#FFFFFF , #00BFFF);
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-width: 320px;
+  height: 100vh;
+  
+}
+
+.container {
+  max-width: 340px;
+  min-width: 260px;
+  background: rgba(255,255,255,0.70);
+  margin-top: 50px;
+  border-radius: 10px;
+  padding-bottom: 25px;
+  
+}
+
+.weatherInfo {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+#cityAndCountry {
+  
+}
+
+.tempAndButton {
+  display: inline-block;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+}
+
+.outerToggle {
+  /*this class was needed because controls on margin & padding were not possible on the 
+  checkbox element directly */
+  margin-top: 10%;
+  /*border: 2px red solid;*/
+}
+
+  .toggle.android { border-radius: 5px;}
+  .toggle.android .toggle-handle { border-radius: 5px; background-color: white;}
