@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"]*/
 const express = require('express');
 const path = require('path');
 
@@ -9,5 +10,9 @@ myapp.set('port', port);
 myapp.use('/public', express.static(path.join(__dirname, 'public')));
 
 myapp.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
+  res.sendFile('index.html', { root: (path.join(__dirname)) });
+});
+
+myapp.listen(port, () => {
+  console.log(`Now listening on ${port}`);
+});
