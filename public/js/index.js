@@ -4,24 +4,24 @@ $(document).ready(function() {
   let weatherInfo;
   let tempUnitState;
   //preloading all images
-  let clouds = new Image();
-  clouds.src = "https://6oqgzq.dm2302.livefilestore.com/y3mbnimJ9Aho-WQm19eXtzZehSl8Lkzg7f5jlzi8JO0_sO7zSQAsZB2PQJw5ri0j04Fwh5yVmc7VALHofCZH3Fp77QAnmeNHJn_55H_9_GSgjv1PuhIftACFhWHwgHMPJFl7-gJNEXZpMOAC4ajdZZ-nl7XPthN7M6EUiLPR-3nl7U?width=1920&height=1080&cropmode=none";
+    let clouds = new Image();
+  clouds.src = "https://6oqlzq.dm2302.livefilestore.com/y4mwQzeFJAje5WerM2dauJJ72TVVFWCOBcO_oZvkpOcmUIPf30HKdLLSsm4o6zsrdkDPG2zSn7zEZc7bkDulS05W-ucHIRFMkxZVFmht3TRPchsdzgQyWfXCYXd3xKohVjOnYMP_HJ2Oka_wcdgMR2tueXDqB8meXXTsHcZpzUo2dWv-GQfMhHNVCWD5H8QyS3XV770tH9e7AAmm1WMyl4E4A?width=1920&height=1080&cropmode=none";
 
   let snow = new Image();
-  snow.src = "https://64qgzq.dm2302.livefilestore.com/y3mTqcwJAJHCDb9HKAYjp1lfnmJ5wgTTKTxvpuZZWGgAgjCx60-seM9XmLBb9gclvvtmdbxawPzR3GDCs24MxOrUYWNCTx55Ii5_cSWhyDZjJWE9dtPPM_eYnkcT2wzvHIWN21QBZvY2BgloMzhNMZxrmQxTiJWrrs1-H2LyarxF38?width=1920&height=1080&cropmode=none";
+  snow.src = "https://64qgzq.dm2302.livefilestore.com/y4mTqcwJAJHCDb9HKAYjp1lfqXwljAtNZJv3DSZ0cEweDDQILQ30XeenfVzvsn0-zx2gS-37kCnbwoD62GkwNSDsypR4RLsYh7TP3AIG2igJ6UU1oMwUFcIiIXfjsPoZBN2sM2jK6J5CO7iLaTv5IDw9A1ZQlwUv33OIHKI9RNsPv71kCjg_3CM_lgxmbncIkELAHMz8_uXkc48e37TALnZmw?width=1920&height=1080&cropmode=none";
 
   let rain = new Image();
-  rain.src = "https://64qfzq.dm2302.livefilestore.com/y3mvdQyoCQOr4E4va4LMvVDaKebonPzivzz3ciX6opJ9AdQHVlrrlPzPyOVeqfahu162gTygTFFvPAm2j7D8LlVSZulIGx8c7X5GGoFRZPKCi_G77UMtYXi7G3nrIJxAOfSfnEVTZxvM-ghs2pcJ6MjX4NcJRY_oM7dS94oUGNjHLc?width=1920&height=1079&cropmode=none";
+  rain.src = "https://64qfzq.dm2302.livefilestore.com/y4mvdQyoCQOr4E4va4LMvVDaH-kpgrktFLScZLw40-9_2TwySLvnh2H6flZXkbVN0ZfMnDhq_BzRGHFe63tYHa2qYLggCnGpmcqzIQ7DwKLTeQcbK00wrH_qCUXYjSKjn9cX0kUoSNN3JBtBm-YIXCWMDtHwEpUKM778R7pEPPom1uVoh4k9GCB0elsxCazKeuQjfRiiiJwehQoGyOqo2BGPQ?width=1920&height=1079&cropmode=none";
   let thunderstorm = new Image();
-  thunderstorm.src = "https://64qszq.dm2302.livefilestore.com/y3m9soZ-HtittBqk-zNil_svJIl-wuvoYZl8TTqbsfZ3pz6JWGISB-rjsR7i4PlIKgSOYNWuzixPLjqVfG5zXGV8FxJ1643V25vWKGseEOySiY0EMbiNlsFEdZxrtHsxfp77B7tCsRe5gGUvwGcCHQ7qeeoX_pktV1QKIojtxjdj6o?width=1920&height=1200&cropmode=none";
+  thunderstorm.src = "https://64qszq.dm2302.livefilestore.com/y4m9soZ-HtittBqk-zNil_svHS6NXxJ-WeshexDfRBLaVn92it-QbsXyrERw3xJbw4hdUsTTXi8cbd6vZbO4_7WxKelwtiAplKh11XITQ4CYMHi8rBRVx11KyFmaMgEb3Q5i1IpqO5FiTHxx42RcABBkRvpFxBA7c3teTYSQpUEAbxpL3_aNfSl3C459uGEbGUcluOy5ISN5w7oK-TwgCXLOA?width=1920&height=1200&cropmode=none";
   let drizzle = new Image();
-  drizzle.src = "https://6oqrzq.dm2302.livefilestore.com/y3mY3MWYeJylxdBzh_x1my-PU8qD86Qc-SBeD8KUEq3Ul73isBgV5CQP0JFh6yk4Tk6EL4FxMD3C6bVT7o_gJ-Uu8IKQ9GlC24iY0MMO_niWXlyCCVKcVZwTiFXu3z0mIHA0beJKH4H2WOErmu1Ze2zokAPi0kUtPJKeV22t12JQQA?width=1920&height=1280&cropmode=none";
+  drizzle.src = "https://6oqrzq.dm2302.livefilestore.com/y4mY3MWYeJylxdBzh_x1my-PZurdYCYsQgSHzoov71mP8ilVe25uVEhk5C9RTXvwpOgP927ZDDA96NT8crxYBTlpYqZ64Rnx4szt3dlHvc5JqiYHxGiiVhxyhq1ySah6JnJkFFGOh5yX4sulCVsZlIGNIIlhN9Cud-uO-p6FbAFnnbrIhTdF2F8Hg9AsSXxE7Gty4O0BrZzvQrko_UHhILnzg?width=1920&height=1280&cropmode=none";
   let clear = new Image();
-  clear.src = "https://6oqozq.dm2302.livefilestore.com/y3m7JrhTzNBodIy2F5_aR4Q6VXjlcjWeZuNPOrsQmGwS7i_Vx_0EBNduQ9Asgiz370tC9XzIPKt6KKKWi3Gx2Ka5Q3UtARyK2cpp8JEsa0Z8kEN4PTsNhccI0_eWofDz4EtMvHmQwhA6fKmvJrNb6aL2JELQ3zyHpTsbuiFkQCneSQ?width=1920&height=1080&cropmode=none";
+  clear.src = "https://6oqozq.dm2302.livefilestore.com/y4m7JrhTzNBodIy2F5_aR4Q6dEZw8dhX1SrRVFzYrvd9c9MryT4ZbZWnYyj5iGr1utIz3nW_knxFIxvp1Vmoo9RhixdgSuCZAg_jUQHHWbkkpilByhPCfg8HSNyfA6mq0U7i0KBD9PViwyVjaxDEgfk1brZ80bl_GyyTXfvG-F7-u0dW7rH9smV2jAlkQFqj2MuE3YHKr9VpUD0-poqMOhOFA?width=1920&height=1080&cropmode=none";
   const extreme = new Image();
-  extreme.src = "https://6oqmzq.dm2302.livefilestore.com/y3mQYnh4t6apVgQm1i92ukqlk5kbP8OUFHOQONeA1QLTg8KFyo99YLpYT9bR2PnpOwkHK1xY7z4ik6zfkzz6I1dVnP8OctEbV9MPkkBieKx1Tlu-sTHWUtr3cezf4G3T4szJWgLj09aEHoaOJIU1Bd01wToJRWei7YKMKUzNqxb-D4?width=1920&height=1080&cropmode=none";
+  extreme.src = "https://6oqmzq.dm2302.livefilestore.com/y4mQYnh4t6apVgQm1i92ukqlpY3-vjj_WKeajJXZ_amp9k1YItxuTEMdbO-j9LpY0NKCxIrhnv-vlXxL6JFyl22l0xlieHvUjOB_2VUlc01c3s-1fJsZurlhL_HN33LI87icW2L3CdxdIADjuwUt6DbA10XuHHKoItosH2B2ozN7iHVngd4ObnSduCGpLiQKU9tgZFZkLm4Ly6jDr7nezOdcQ?width=1920&height=1080&cropmode=none";
   let atmosphere = new Image();
-  atmosphere.src = "https://6oqnzq.dm2302.livefilestore.com/y3mdLw347Azb5KrG2_ZnRUC0T7kY57jDcJcPdxA5RveP1qM4w-xMfmeX_WlHSIkdLfmGXRe-KVZis_OOg1JtHDYiBcQhWclCv--wgvHX1QzhA6S0i1xoBaZyzbI8vFtfqoWS4cVFqqhRaSFeLy9PqXsbbvHuREXsr_7kGAmkMUSwOw?width=1920&height=1080&cropmode=none";
+  atmosphere.src = "https://6oqnzq.dm2302.livefilestore.com/y4mdLw347Azb5KrG2_ZnRUC0RERAbV5V-pKpNKK8HwvUOXF2IsR44ZDBzZC8yjJghSmBWAPycG6kDWH4-9kVIqvtCQz_U8mT6wycXr-_kKyl0J25Sn5-IQacVhTU8yKMNSdDzplWQSo6--tuz2CuT_LXcumw1LUNYoHZVYF1da5_QYj1Om2qDLKUzWxsBWTjHNophCgo6saAxFzuoIZC0PJgg?width=1920&height=1080&cropmode=none";
   $("#giveMeWeather").on("click", function() {
     getWeatherAndLocation("#cityAndCountryColn", "#weatherDescriptionColn", "#temperatureColn", "#changeUnitsButtonColn", "#weatherIconColn");
 
