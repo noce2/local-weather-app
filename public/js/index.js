@@ -1,10 +1,9 @@
 /* eslint linebreak-style: ["error", "windows"]*/
 $(document).ready(function() {
-  let receivedLocation;
   let weatherInfo;
   let tempUnitState;
   //preloading all images
-    let clouds = new Image();
+  let clouds = new Image();
   clouds.src = "https://6oqlzq.dm2302.livefilestore.com/y4mwQzeFJAje5WerM2dauJJ72TVVFWCOBcO_oZvkpOcmUIPf30HKdLLSsm4o6zsrdkDPG2zSn7zEZc7bkDulS05W-ucHIRFMkxZVFmht3TRPchsdzgQyWfXCYXd3xKohVjOnYMP_HJ2Oka_wcdgMR2tueXDqB8meXXTsHcZpzUo2dWv-GQfMhHNVCWD5H8QyS3XV770tH9e7AAmm1WMyl4E4A?width=1920&height=1080&cropmode=none";
 
   let snow = new Image();
@@ -23,7 +22,7 @@ $(document).ready(function() {
   let atmosphere = new Image();
   atmosphere.src = "https://6oqnzq.dm2302.livefilestore.com/y4mdLw347Azb5KrG2_ZnRUC0RERAbV5V-pKpNKK8HwvUOXF2IsR44ZDBzZC8yjJghSmBWAPycG6kDWH4-9kVIqvtCQz_U8mT6wycXr-_kKyl0J25Sn5-IQacVhTU8yKMNSdDzplWQSo6--tuz2CuT_LXcumw1LUNYoHZVYF1da5_QYj1Om2qDLKUzWxsBWTjHNophCgo6saAxFzuoIZC0PJgg?width=1920&height=1080&cropmode=none";
   $("#giveMeWeather").on("click", function() {
-    getWeatherAndLocation("#cityAndCountryColn", "#weatherDescriptionColn", "#temperatureColn", "#changeUnitsButtonColn", "#weatherIconColn");
+    getWeather("#cityAndCountryColn", "#weatherDescriptionColn", "#temperatureColn", "#changeUnitsButtonColn", "#weatherIconColn");
 
   });
 
@@ -78,40 +77,11 @@ $(document).ready(function() {
     return myOneDecimalRnding((1.8 * numberToConvert) + 32);
   }
 
-  function getWeatherAndLocation(locNode, descripNode, tempNode, chgBtnNode, iconNode) {
-    let apiTarget = "https://stormy-fortress-66721.herokuapp.com/dondeestoy";
-
-    $.getJSON(apiTarget, function(data, textStatus, jqXHR) {
-        //console.log("the status of the getLocation getJSON is " + textStatus);
-
-      })
-      .done(function(data) {
-        if(data.error){
-          console.log(data);
-        } else {
-          receivedLocation = {
-            "lat": data.lat,
-            "lon": data.lon
-          };
-          //console.log(receivedLocation);
-          getWeather(receivedLocation, locNode, descripNode, tempNode, chgBtnNode, iconNode);
-        }
-      })
-      .fail(function() {
-        //console.log("the status of the getLocation getJSON failed");
-      });
-
-  }
-
-  function getWeather(whereToLook, locNode, descripNode, tempNode, chgBtnNode, iconNode) {
-    let apiTarget = "https://stormy-fortress-66721.herokuapp.com/dameelclima";
-    let queryParams = whereToLook;
-    queryParams.APPID = "078ecb2576afa59e6e132d1ce4c68684";
-    queryParams.units = "metric";
-
+  function getWeather(locNode, descripNode, tempNode, chgBtnNode, iconNode) {
+    const apiTarget = "https://stormy-fortress-66721.herokuapp.com/dameelclima";
     tempUnitState = 'C'; // because the call is to metric, I assign state to C, so there's no confusion
 
-    $.getJSON(apiTarget, queryParams, function(data, textStatus, jqXHR) {
+    $.getJSON(apiTarget, function(data, textStatus, jqXHR) {
         //console.log("the status of the getLocation getJSON is " + textStatus);
       })
       .done(function(data) {
@@ -138,7 +108,7 @@ $(document).ready(function() {
 
   function giveBkgrndUrlImgProp(inputCondition) {
 
-    let backgroundImageLib = {
+    const backgroundImageLib = {
       Thunderstorm: thunderstorm.src,
       Drizzle: drizzle.src,
       Rain: rain.src,
