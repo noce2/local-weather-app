@@ -3,7 +3,7 @@ $(document).ready(function() {
   let weatherInfo;
   let tempUnitState;
   //preloading all images
-    let clouds = new Image();
+  let clouds = new Image();
   clouds.src = "https://6oqlzq.dm2302.livefilestore.com/y4mwQzeFJAje5WerM2dauJJ72TVVFWCOBcO_oZvkpOcmUIPf30HKdLLSsm4o6zsrdkDPG2zSn7zEZc7bkDulS05W-ucHIRFMkxZVFmht3TRPchsdzgQyWfXCYXd3xKohVjOnYMP_HJ2Oka_wcdgMR2tueXDqB8meXXTsHcZpzUo2dWv-GQfMhHNVCWD5H8QyS3XV770tH9e7AAmm1WMyl4E4A?width=1920&height=1080&cropmode=none";
 
   let snow = new Image();
